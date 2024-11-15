@@ -33,18 +33,36 @@ def movie_profit(table):
         row.append(profit)
 
 def write_file(f_name, table):
-    file = open(f_name, "w")
-    for row in table:
-        row = str(row)
-        line = ','.join(row)
-        file.write(line + "\n")
+        file = open(f_name, "w")
+        for row in table:
+            line = ','.join(str(row))
+            file.write(line + "\n")
+        file.close()
 
+def output_highest_profit(table):
+    maximum = 0
+    h_row = []
+    for row in table:
+        try:
+            profit = int(row[5])
+            if profit > maximum:
+                maximum = profit
+                h_row = row
+        except ValueError:
+            print('Something went wrong')
+
+    if h_row:
+        print(f'The highest profit is ${maximum}.')
+        print(f'Movie Information: {h_row}')
+    else:
+        print('No data found')
 
 def main():
     f_name = read_file_name()
     table = read_file(f_name)
     movie_profit(table)
     write_file(f_name, table)
+    output_highest_profit(table)
 
 
 main()
