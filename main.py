@@ -1,7 +1,4 @@
 import os
-from idlelib.debugger_r import tracebacktable
-from zlib import Z_RLE
-
 
 # Name: read_file_name
 # Parameters: None
@@ -17,35 +14,37 @@ def read_file(f_name):
     table = []
     try:
         file = open(f_name, "r")
-        for line in f_name:
-            row = line.split()
+        for line in file:
+            row = line.strip().split(',')
             for i in range(len(row)):
                 if row[i].isdigit():
-                    row[i] = int([i])
+                    row[i] = int(row[i])
+            table.append(row)
 
-
-    except:
+    except FileNotFoundError:
         print('File does not exist')
     return table
 
 def movie_profit(table):
     for row in table:
-        budget = row[2]
-        gross = row[3] + row[4]
+        budget = int(row[2])
+        gross = int(row[3]) + int(row[4])
         profit = gross - budget
         row.append(profit)
 
-def write_file(table, profit):
-    file = open(table, "w")
+def write_file(f_name, table):
+    file = open(f_name, "w")
     for row in table:
-        line = row.join(',')
-        line += '\n'
-        print(line)
+        row = str(row)
+        line = ','.join(row)
+        file.write(line + "\n")
+
 
 def main():
     f_name = read_file_name()
     table = read_file(f_name)
-    write_file(table, movie_profit(table))
+    movie_profit(table)
+    write_file(f_name, table)
 
 
 main()
