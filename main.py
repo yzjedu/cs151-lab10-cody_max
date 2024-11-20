@@ -10,6 +10,9 @@ def read_file_name():
         f_name = input("File not exist. Enter file name: ")
     return f_name
 
+# Name: read_file
+# Parameters: f_name
+# Return:table
 def read_file(f_name):
     table = []
     try:
@@ -25,6 +28,9 @@ def read_file(f_name):
         print('File does not exist')
     return table
 
+# Name: movie_profit
+# Parameters: table
+# Return: none
 def movie_profit(table):
     for row in table:
         budget = int(row[2])
@@ -32,6 +38,9 @@ def movie_profit(table):
         profit = gross - budget
         row.append(profit)
 
+# Name: write_file
+# Parameters: f_name
+# Return: none
 def write_file(f_name, table):
         file = open(f_name, "w")
         for row in table:
@@ -39,6 +48,9 @@ def write_file(f_name, table):
             file.write(line + "\n")
         file.close()
 
+# name: output_highest_profit
+# Parameter: table
+# Return: none
 def output_highest_profit(table):
     maximum = 0
     h_row = []
@@ -57,6 +69,9 @@ def output_highest_profit(table):
     else:
         print('No data found')
 
+# name: main
+# Parameter: none
+# Return: none
 def main():
     f_name = read_file_name()
     table = read_file(f_name)
