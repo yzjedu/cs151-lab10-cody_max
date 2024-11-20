@@ -1,3 +1,12 @@
+# Programmers:  Max Rice
+# Course:  CS151, Dr. Yalew
+# Due Date: 11/21
+# Programming Assignment:  Lab 10
+# Problem Statement: reads a list of movies and calculates movie profits and highest profiting movie
+# Data In: file name
+# Data Out:  highest profit movie, cost of movie, movie information
+# Credits: the readme file
+
 import os
 
 # Name: read_file_name
