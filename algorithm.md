@@ -3,32 +3,6 @@
 #### THINK before you code...
 #### Write down the list of tasks to help you think
 
-# Name: read_file_name
-# Parameters: None
-# Return: f_name
-
-
-# Name: read_file
-# Parameters: f_name
-# Return:table
-
-
-# Name: movie_profit
-# Parameters: table 
-# Return: none
-# 
-# Name: write_file
-# Parameters: f_name
-# Return: none
-
-# name: output_highest_profit
-# Parameter: table
-# Return: none
-
-# name: main
-# Parameter: none
-# Return: none
- 
 
  row.append(profit)
 1. define function as movie_profit
