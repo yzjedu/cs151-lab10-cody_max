@@ -85,7 +85,7 @@ def main():
     f_name = read_file_name()
     table = read_file(f_name)
     movie_profit(table)
-    write_file(f_name, table)
+    write_file('out.csv', table)
     output_highest_profit(table)
 
 
